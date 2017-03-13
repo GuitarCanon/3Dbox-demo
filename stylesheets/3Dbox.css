@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#view {
+    width: 200px;
+    height: 200px;
+    margin: 150px auto 0 auto;
+}
+
+/*立方体各面定位*/
+#box div {
+    height: 200px;
+    width: 200px;
+    border: 1px solid #000000;
+    opacity: 0.9;
+    position: absolute;
+   }
+
+.front {
+    background-color: #E60412;
+    -webkit-transform: translateZ(100px);
+    
+}
+
+.top {
+    background-color: #EB6100;
+    -webkit-transform: rotateX(90deg) translateZ(100px);
+}
+
+.right {
+    background-color: #FCC900;
+    -webkit-transform: rotateY(90deg) translateZ(100px);
+}
+
+.left {
+    background-color: #1A1D8C;
+    -webkit-transform: rotateY(-90deg) translateZ(100px);
+}
+
+.bottom {
+    background-color: #019E97;
+    -webkit-transform: rotateX(-90deg) translateZ(100px);
+}
+
+.back {
+    background-color: #009A44;
+    -webkit-transform: rotateY(-180deg) translateZ(100px);
+}
+
+/*立方体3D展现及动画设置*/
+#box {
+    position: relative;
+    -webkit-animation-name: animation;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 3s;
+   -webkit-transform-style: preserve-3d;
+    /*-webkit-perspective:800px;*/
+    -webkit-transform-origin: 80px 80px 0;
+}
+
+@-webkit-keyframes animation {
+    0% {
+        -webkit-transform: rotate3d(1, 1, 0, 25deg);
+    }
+    10% {
+        -webkit-transform: rotate3d(1, 1, 0, 75deg);
+    }
+    20% {
+        -webkit-transform: rotate3d(1, 1, 0, 90deg);
+    }
+    30% {
+        -webkit-transform: rotate3d(1, 1, 0, 125deg);
+    }
+    40% {
+        -webkit-transform: rotate3d(1, 1, 0, 150deg);
+    }
+    50% {
+        -webkit-transform: rotate3d(1, 1, 0, 180deg);
+    }
+    60% {
+        -webkit-transform: rotate3d(1, 0, 1, -180deg);
+    }
+    70% {
+        -webkit-transform: rotate3d(1, 0, 1, -150deg);
+    }
+    80% {
+        -webkit-transform: rotate3d(1, 0, 1, -125deg);
+    }
+    90% {
+        -webkit-transform: rotate3d(1, 0, 1, -90deg);
+    }
+    100% {
+        -webkit-transform: rotate3d(1, 0, 1, -75deg);
+    }
+}
+
+
